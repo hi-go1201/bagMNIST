@@ -5,10 +5,6 @@ async function runExample() {
   // Load an ONNX model. This model is Resnet50 that takes a 1*3*224*224 image and classifies it.
   await session.loadModel("./bagMNIST.onnx");
 
-  // Load image.
-  const imageLoader = new ImageLoader(imageSize, imageSize);
-  const imageData = await imageLoader.getImageData('./30H7GV6T8L-0191_1.jpg');
-
   //opencv.jsで画像を28x28背景黒のグレースケール画像に変換
   //dst2の手法ならcanvasへの描画も一つでできるが、精度が悪い。dstだけだとなぜかcanvasに表示されない
   //let src = cv.matFromImageData(imageData);
